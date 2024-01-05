@@ -41,17 +41,6 @@ def run(day):
                 print(Exception)
         for span in mdsoup:
             next_tag = span.find_next()
-
-            # if next_tag and next_tag.name == 'a':
-            #     textsoup.append(span.get_text())
-        # print(mdsoup)
-        # for dd in textsoup:
-        #     if textsoup.index(dd) % 2 == 0:
-        #         match.append({'time':dd,'match':textsoup[int(textsoup.index(dd))+1]})
-
-        # print(match)
-        # with open('output.json', 'w') as f:
-        #     json.dump(fullres, f)
         return fullres
 
     # Use the function
@@ -78,4 +67,4 @@ def index(request):
         </body>
     </html>
     '''
-    return HttpResponse(datas)
+    return HttpResponse(json.dumps(datas))
